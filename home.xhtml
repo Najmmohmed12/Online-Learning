@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home</title>
+    <script type="text/javascript">
+        function displayDateTime() {
+            var now = new Date();
+            var dateTimeString = now.toLocaleString();
+            document.getElementById('dateTime').innerText = dateTimeString;
+        }
+    </script>
+</head>
+<body onload="displayDateTime()">
+    <h1>Welcome to the Web Application Development Assignment</h1>
+    <p id="dateTime"></p>
+    <p>Select an option from the Table of Contents to get started.</p>
+</body>
+</html>

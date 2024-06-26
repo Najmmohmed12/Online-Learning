@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Student Details Form</title>
+    <script type="text/javascript">
+        function validateEmail() {
+            var email = document.forms["studentForm"]["email"].value;
+            if (email.indexOf("@") === -1) {
+                alert("Invalid email address.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Student Details Form</h1>
+    <form name="studentForm" action="submit_form.php" method="post" onsubmit="return validateEmail()">
+        <fieldset>
+            <legend>Student Information</legend>
+            <p>
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" name="courseName" />
+            </p>
+            <p>
+                <label>Course Level:</label>
+                <input type="radio" id="undergrad" name="courseLevel" value="undergrad" />
+                <label for="undergrad">Undergraduate</label>
+                <input type="radio" id="grad" name="courseLevel" value="grad" />
+                <label for="grad">Graduate</label>
+            </p>
+            <p>
+                <label for="homeworkNumber">Homework Number:</label>
+                <select id="homeworkNumber" name="homeworkNumber">
+                    <option value="1">HW #1</option>
+                    <option value="2">HW #2</option>
+                </select>
+            </p>
+            <p>
+                <label for="homeworkIncludes">Homework Includes:</label>
+                <select id="homeworkIncludes" name="homeworkIncludes" multiple="multiple">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                </select>
+            </p>
+            <p>
+                <label for="fileAttachment">File Attachment:</label>
+                <input type="file" id="fileAttachment" name="fileAttachment" />
+            </p>
+            <p>
+                <label for="email">Contact Email:</label>
+                <input type="text" id="email" name="email" />
+            </p>
+            <p>
+                <input type="submit" value="Submit" />
+                <input type="reset" value="Reset" />
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Grade Map</title>
+    <script type="text/javascript">
+        function changeImage(region) {
+            document.getElementById('gradeMapImage').src = 'grade_map_' + region + '.jpg';
+        }
+
+        function resetImage() {
+            document.getElementById('gradeMapImage').src = 'grade_map.jpg';
+        }
+    </script>
+</head>
+<body>
+    <h1>Grade Map</h1>
+    <img id="gradeMapImage" src="grade_map.jpg" usemap="#gradeMap" alt="Grade Map" />
+    <map name="gradeMap">
+        <area shape="rect" coords="0,0,50,50" href="#A" alt="A" onmouseover="changeImage('A')" onmouseout="resetImage()" />
+        <area shape="rect" coords="50,0,100,50" href="#B" alt="B" onmouseover="changeImage('B')" onmouseout="resetImage()" />
+        <area shape="rect" coords="0,50,50,100" href="#C" alt="C" onmouseover="changeImage('C')" onmouseout="resetImage()" />
+        <area shape="rect" coords="50,50,100,100" href="#D" alt="D" onmouseover="changeImage('D')" onmouseout="resetImage()" />
+    </map>
+    <h2 id="A">A: 90-100%</h2>
+    <p>Description of grade A.</p>
+    <h2 id="B">B: 80-89%</h2>
+    <p>Description of grade B.</p>
+    <h2 id="C">C: 70-79%</h2>
+    <p>Description of grade C.</p>
+    <h2 id="D">D: 60-69%</h2>
+    <p>Description of grade D.</p>
+    <p><a href="javascript:goBack()">[prev]</a> <a href="index.xhtml" target="_top">[home]</a> <a href="student_details.xhtml" target="content" onclick="updateHistory(this)">[next]</a></p>
+</body>
+</html>

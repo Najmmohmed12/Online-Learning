@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web Application Development Assignment</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript">
+        let historyStack = [];
+
+        function updateHistory(link) {
+            historyStack.push(link.href);
+        }
+
+        function goBack() {
+            if (historyStack.length > 1) {
+                historyStack.pop();
+                window.frames['content'].location.href = historyStack.pop();
+            }
+        }
+
+        function openNewWindow(event) {
+            event.preventDefault();
+            window.open('course_syllabus.xhtml', 'Course Syllabus', 'width=800,height=600');
+        }
+    </script>
+</head>
+<body>
+    <div id="container">
+        <div id="toc">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="student_details.xhtml" target="content" onclick="updateHistory(this)">Student Details</a></li>
+                <li><a href="course_syllabus.xhtml" target="content" onclick="openNewWindow(event)">Course Syllabus</a></li>
+                <li><a href="grade_map.xhtml" target="content" onclick="updateHistory(this)">Grade Map</a></li>
+                <li><a href="form.xhtml" target="content" onclick="updateHistory(this)">Student Details Form</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <iframe name="content" src="home.xhtml" frameborder="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>
